@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>jQuery any click event</title>
+
+    <script src='//yastatic.net/jquery/2.2.0/jquery.min.js'></script>
+    <script src='./../src/jquery.any.click.js'></script>
+</head>
+
+<body>
+
+<button value='button' class="bind">Click me</button>
+<div>Last event: <span class='log'>0</span></div>
+<br />
+<button value='button' class="delegate">Click me (delegate)</button>
+<div>Last event delegate: <span class='log_delegate'>0</span></div>
+
+<script>
+    $(function(){
+        var i = 0;
+        var max = 7;
+
+        $('button.bind').anyClick({
+            maxCount: max
+        });
+
+        $(document).anyClick({
+            delegate: 'button.delegate',
+            maxCount: max,
+            eventName: 'anyclick'
+        });
+
+        for (i; i <= max; i++) {
+            $(document).on('clickCount.'+i, 'button.bind', function(){
+                $('.log').text(this);
+            }.bind(i));
+
+            $(document).on('anyclick.'+i, 'button.delegate', function(){
+                $('.log_delegate').text(this);
+            }.bind(i));
+        }
+    });
+</script>
+
+</body>
+</html>
