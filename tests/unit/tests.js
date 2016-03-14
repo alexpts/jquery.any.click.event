@@ -4,7 +4,7 @@ var $result = $('div#result');
 var timeWaitClick = 100;
 var maxClicksDetect = 5;
 
-var name;
+var name = '';
 var tests = {
   'one click': function(assert){
     var done = assert.async();
@@ -55,7 +55,7 @@ var tests = {
     var i = 0;
 
     for (i; count > i; i++) {
-      $button.click()
+      $button.click();
     }
 
     assert.equal(+$result.text(), 0);
