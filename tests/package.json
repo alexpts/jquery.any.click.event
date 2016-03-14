@@ -1,0 +1,19 @@
+{
+  "name": "test-jquery.any.click.event",
+  "version": "1.0.0",
+  "description": "test jquery plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {},
+  "author": "alexpts",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  }
+}

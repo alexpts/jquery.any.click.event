@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.22.0.css">
+</head>
+<body>
+
+<button id="click" name="click">Click me</button>
+<div id="result">0</div>
+
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+<script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="//code.jquery.com/qunit/qunit-1.22.0.js"></script>
+<script src="./../../src/jquery.any.click.js"></script>
+<script src="tests.js"></script>
+
+<script>
+    $(function(){
+        var i = 0;
+        var max = 7;
+
+        for (i; i <= max; i++) {
+            $(document).on('clickCount.'+i, '#click', function(){
+                $('#result').text(this);
+            }.bind(i));
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,5 +1,9 @@
 # jQuery any click count detect
 
+[![bitHound Overall Score](https://www.bithound.io/github/alexpts/jquery.any.click.event/badges/score.svg)](https://www.bithound.io/github/alexpts/jquery.any.click.event)
+
+## 
+
 Плагин позволяет отлавливать любое число кликов на элементе. 
 Я не смог найти ни один плагин тройного клика, который работает с делегированием событий. А также позволят отлавливать более 3 кликов. В результате чего появился этот небольшой плагин.
 

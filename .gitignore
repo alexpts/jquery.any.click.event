@@ -1,0 +1,3 @@
+tests/node_modules
+tests/ncoverage
+tests/.nyc_output
